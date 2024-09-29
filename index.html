@@ -1677,14 +1677,15 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const wordList = document.querySelectorAll("#wordList .word-item");
-    // Comment this part out for testing
-/*
-wordList.forEach((word, index) => {
-    if (index >= 10) {
+
+    // Uncomment this part if you want to limit the number of words displayed by default
+    /*
+    wordList.forEach((word, index) => {
+      if (index >= 10) {
         word.style.display = 'none';
-    }
-});
-*/
+      }
+    });
+    */
 
     // Search functionality
     const searchInput = document.getElementById("search");
@@ -1692,9 +1693,9 @@ wordList.forEach((word, index) => {
       const filter = searchInput.value.toLowerCase();
       wordList.forEach((word) => {
         if (word.textContent.toLowerCase().includes(filter)) {
-          word.style.display = '';
+          word.style.display = '';  // Show the word if it matches the filter
         } else {
-          word.style.display = 'none';
+          word.style.display = 'none';  // Hide the word if it doesn't match
         }
       });
     });
