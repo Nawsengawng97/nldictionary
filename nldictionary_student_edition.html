@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLDictionary - Law Student Tool</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #search {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        .word-item {
+            margin-bottom: 15px;
+        }
+        .word {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .meaning {
+            font-size: 16px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #999;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+        .acknowledgement {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .note {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    NLDictionary - Law Student Edition
+</header>
+
+<main>
+    <input type="text" id="search" onkeyup="searchWord()" placeholder="Search for a word...">
+
+    <div class="word-item">
+    <p class="word">A</p>
+    <p class="meaning">၁။ (အမှတ်စဉ်)က။ is datism <br> ၂။ တရားရုံးတွင် တရားလိုဘက်မှ တင်သွင်းသည့် ဦးဆုံးသက်သေခံ စာချုပ်စာတမ်းများအတွက် ပေး သည့် အမှတ်စဉ် (တရားရုံးတွင် တရားလိုဘက်မှတင်သွင်းသော စာချုပ်စာတမ်းများကို အမှတ်စဉ် ဖြင့်လည်းကောင်း၊ အခြားတစ်ဖက် မှတင်သွင်းသော စာချုပ်စာတမ်း များကို “၁” ၊ “၂” ၊ “၃” အမှတ် စဉ်ဖြင့်လည်းကောင်း၊ ခွဲခြားသတ်မှတ်သည်)</p>
+</div>
+<div class="word-item">
+    <p class="word">A 1 at Lloyd's</p>
+    <p class="meaning">လွိုက်၏ ပထမတန်းစား (လွိုက် မှတ်ပုံတင်စာရင်းသွင်းရာ၌ ပထမတန်းစား ဝင်သင်္ဘော)</p>
+</div>
+<div class="word-item">
+    <p class="word">A coelo usque ad centrum (Lat.)</p>
+    <p class="meaning">အထက်ဘဝဂ်။ အောက်နရက် (မြေကို ပိုင်ဆိုင်ရာတွင် ပိုင်ဆိုင်ခွင့်သည် မြေ၏ အထက်ကို ကောင်းကင်အထိ၊ မြေ အောက်ကို ကမ္ဘာမြေကြီး၏ အလယ် ဗဟိုအထိရှိကြောင်း ပြဆိုသည့် စကား ရပ်)</p>
+</div>
+<div class="word-item">
+    <p class="word">A mensa et thoro (Lat.)</p>
+    <p class="meaning">လင်ခန်းမယားခန်း ယာယီရပ်စဲခြင်း စကားရပ်</p>
+</div>
+<div class="word-item">
+    <p class="word">A right to invoke</p>
+    <p class="meaning">ကိုးကားတင်ပြနိုင်ခွင့်</p>
+</div>
+<div class="word-item">
+    <p class="word">Α.Β.</p>
+    <p class="meaning">အရည်အချင်းပြည့် သင်္ဘောသား</p>
+</div>
+<div class="word-item">
+    <p class="word">(Able bodied seaman)</p>
+    <p class="meaning">(ပင်လယ်ပြင်တွင် အမှုထမ်းရက် သုံး နှစ်ရပြီးသော သင်္ဘောသား)</p>
+</div>
+<div class="word-item">
+    <p class="word">Ab ante (Lat.)</p>
+    <p class="meaning">ဦးစွာ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Ab initio (Lat.)</p>
+    <p class="meaning">မူလအစ။ အစကနဦး။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abaction</p>
+    <p class="meaning">အကြမ်းဖက်ယူဆောင်သွားခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abactor</p>
+    <p class="meaning">ကျွဲ၊ နွား တိရစ္ဆာန်များကို အုပ်လိုက်ခိုးသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abalienation (Fr.)</p>
+    <p class="meaning">ပစ္စည်းကို ဥပဒေနှင့်အညီ ပိုင်ဆိုင်ခွင့် လွှဲပြောင်းပေးအပ်ခြင်း။ လွှဲပြောင်းပေး အပ်မှု။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abandon</p>
+    <p class="meaning">ရပိုင်ခွင့် သို့မဟုတ် အကျိုးခံစားခွင့်ကို စွန့်လွှတ်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abandonee</p>
+    <p class="meaning">တစ်ဦးတစ်ယောက်က စွန့်လွှတ်သော ရပိုင်ခွင့် သို့မဟုတ် အကျိုးခံစားခွင့်ကို လက်ခံသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abandonment</p>
+    <p class="meaning">ရပိုင်ခွင့် သို့မဟုတ် အကျိုးခံစားခွင့်ကို စွန့်လွှတ်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abandonment of action</p>
+    <p class="meaning">တရားမမှုတွင် အမှုသည်တစ်ဦးဦးက အမှုကို ဆက်လက်ရင်ဆိုင်ခြင်းမပြုရန် စွန့်လွှတ်ခြင်း။ နောက်ဆုတ်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abate</p>
+    <p class="meaning">ရပ်စဲစေသည်။ လျော့ပေါ့စေသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abatement</p>
+    <p class="meaning">ရပ်စဲစေခြင်း။ လျော့ပေါ့စေခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abater</p>
+    <p class="meaning">ရပ်စဲစေသူ (နှောင့်ယှက်မှုကိုရပ်စဲစေ သူ)။ လျော့ပေါ့စေသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abator</p>
+    <p class="meaning">(Abater နှင့်အတူတူ)</p>
+</div>
+<div class="word-item">
+    <p class="word">Abbreviation</p>
+    <p class="meaning">အတိုကောက်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abbreviature</p>
+    <p class="meaning">အတိုချုပ်မူကြမ်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abbroach</p>
+    <p class="meaning">ကုန်ပစ္စည်းများကို တစ်ဦးတည်းချုပ် ကိုင်သည်။ သူများထက်လက်ဦးအောင် အုပ်၍ ဝယ်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abbuttals</p>
+    <p class="meaning">အလားလေးရပ်ဖော်ပြချက် (စာချူပ် တစ်ခုခုတွင် မြေတစ်ကွက်၏ အရှေ့၊ အနောက်၊ တောင်၊ မြောက် နယ်နိမိတ် ဖော်ပြချက်)</p>
+</div>
+<div class="word-item">
+    <p class="word">Abdication</p>
+    <p class="meaning">နန်းစွန့်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abditorium</p>
+    <p class="meaning">ပစ္စည်း သို့မဟုတ် ငွေကို သိုဝှက်သိမ်း ဆည်းသည့်နေရာ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abduct</p>
+    <p class="meaning">တစ်ဦးတစ်ယောက်ကို အနိုင်အထက် ပြု၍ဖြစ်စေ၊ ဖြားယောင်း၍ဖြစ်စေ ခေါ်ဆောင်သည် (အထူးသဖြင့် အမျိုးသမ)</p>
+</div>
+<div class="word-item">
+    <p class="word">Abduction</p>
+    <p class="meaning">တစ်ဦးတစ်ယောက်ကို အနိုင်အထက် ပြု၍ဖြစ်စေ၊ ဖြားယောင်းသွေးဆောင်၍ ဖြစ်စေ ခေါ်ဆောင်ခြင်း (အထူးသဖြင့် အမျိုးသမ)</p>
+</div>
+<div class="word-item">
+    <p class="word">Abductor</p>
+    <p class="meaning">အနိုင်အထက် သို့မဟုတ် ဖြားယောင်း သွေးဆောင်၍ ခေါ်ဆောင်သူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Aberance</p>
+    <p class="meaning">အမူအကျင့်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abere murder</p>
+    <p class="meaning">သွေးအေးအေးနှင့်လူသတ်ခြင်း |oai:code-citation|
+    </div><div class="word-item">
+    <p class="word">Abortee</p>
+    <p class="meaning">ကိုယ်ဝန်ပျက်စေရန် ပြုလုပ်ခံရသူ(မိန်းမ)၊</p>
+</div>
+<div class="word-item">
+    <p class="word">Abortion</p>
+    <p class="meaning">ကိုယ်ဝန်ပျက်ခြင်း။ ကိုယ်ဝန်ပျက် စေခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Above</p>
+    <p class="meaning">၁။ အဆင့်မြင့်သော။ ၂။ အထက်ကျသော။</p>
+</div>
+<div class="word-item">
+    <p class="word">Above par</p>
+    <p class="meaning">မူလတန်ဖိုးထက်မြင့်သော ဈေးနှုန်း (အသုံးပြုပြီးဖြစ်သော အစုရှယ်ယာ၊ အာမခံလက်မှတ်များစသည်နှင့် စပ်လျဉ်း၍ သုံးသည်)။</p>
+</div>
+<div class="word-item">
+    <p class="word">Above-cited</p>
+    <p class="meaning">အထက်တွင်ဖော်ပြပြီးဖြစ်သော။</p>
+</div>
+<div class="word-item">
+    <p class="word">Above-mentioned</p>
+    <p class="meaning">(Above cited နှင့်အတူတူ)။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abridge</p>
+    <p class="meaning">၁။ တရားဝင်အခွင့်အရေးတစ်ရပ်အား အကျဉ်းချုံးသည်။ ၂။ လျော့နည်းစေသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abridgement of damages</p>
+    <p class="meaning">နစ်နာကြေးကိုလျော့ပေါ့စေခွင့်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abrogate</p>
+    <p class="meaning">၁။ ဥပဒေအရဖျက်သိမ်းသည်။ ရုပ်သိမ်းသည်။ ၂။ ကျော်လွန်ပယ်ဖျက်သည်။ ပယ်ဖျက်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abrogation</p>
+    <p class="meaning">ဥပဒေတစ်ရပ်ကို ဥပဒေပြုအာဏာပိုင် အဖွဲ့အစည်းက ပယ်ဖျက်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abrogation of the contract</p>
+    <p class="meaning">ပဋိညာဉ်ကို ဖျက်သိမ်းခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abscond</p>
+    <p class="meaning">ထွက်ပြေးတိမ်းရှောင်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absconding</p>
+    <p class="meaning">ဥပဒေအရအရေးယူမှုမှ တိမ်းရှောင်သော။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absence</p>
+    <p class="meaning">တရားရုံးသို့လာရောက်ရန် ပျက်ကွက်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absent</p>
+    <p class="meaning">နေရာတွင်ရှိရန် ပျက်ကွက်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absent parent</p>
+    <p class="meaning">သားသမီးနှင့်အတူမနေသော အမိ သို့မဟုတ် အဖ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absentee landlord</p>
+    <p class="meaning">မိမိမြေ၌မနေသည့် မြေရှင်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absent-mindedness</p>
+    <p class="meaning">မေ့လျော့တတ်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absolute</p>
+    <p class="meaning">ပြီးပြည့်စုံသော။ အဆုံးစွန်သော။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absolute discharge</p>
+    <p class="meaning">တရားခံအား ပြစ်မှုအတွက် ပြစ်ဒဏ်ချမှတ်မှု မပြုခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absolute title</p>
+    <p class="meaning">ပြီးပြည့်စုံသောပိုင်ဆိုင်မှု။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absolution</p>
+    <p class="meaning">အပြီးအပြတ်လွှတ်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absolve</p>
+    <p class="meaning">အပြီးအပြတ်လွှတ်သည်။ လွတ်ငြိမ်း ခွင့်ပေးသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abstain</p>
+    <p class="meaning">ရှောင်ကြဉ်သည်။ မပြုဘဲနေသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abstract</p>
+    <p class="meaning">အတိုချုပ်။ အကျဉ်းချုပ်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abstract of title</p>
+    <p class="meaning">ပိုင်ဆိုင်မှုဖြစ်စဉ်အကျဉ်းချုပ်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abstraction</p>
+    <p class="meaning">တရားကိုယ်သဘောကို ထုတ်ယူခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Absurd mistake</p>
+    <p class="meaning">မဖြစ်တန်ရာသောအမှား။ မဟုတ်က ဟုတ်ကအမှား။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abuse</p>
+    <p class="meaning">အလွဲသုံးသည်။ အလွဲပြုသည် (လူ ပုဂ္ဂိုလ်တစ်ဦးဦးကို)။ မတရားပြုမှု။ အလွဲသုံးမှု။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abuse of discretion</p>
+    <p class="meaning">ဆင်ခြင်တုံတရားကိုအလွဲသုံးမှု။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abuse of distress</p>
+    <p class="meaning">တရားဥပဒေအရ သိမ်းဆည်းထားသော သက်ရှိသက်မဲ့ပစ္စည်းများကို အလွဲ သုံးခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abuse of power</p>
+    <p class="meaning">အခွင့်အာဏာကိုအလွဲသုံးခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abuse of process</p>
+    <p class="meaning">ဥပဒေလုပ်ထုံးလုပ်နည်းကိုအလွဲပြုခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abusing of children</p>
+    <p class="meaning">ကလေးသူငယ်နှင့်ကာမစပ်ယှက်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abut</p>
+    <p class="meaning">ချဉ်းကပ်သည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Abyssal floor</p>
+    <p class="meaning">နက်ရှိုင်းသောသမုဒ္ဒရာ အောက် ကြမ်းပြင်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accede</p>
+    <p class="meaning">သဘောတူလက်ခံသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accelerate</p>
+    <p class="meaning">၁။ တရားဝင်အခွင့်အရေး၊ တာဝန်၊ အကျိုးစီးပွားတစ်ရပ်သည် နောင် တွင်ဖြစ်ထွန်းရန် သို့မဟုတ် တရားဝင် အပ်နှင်းရန်ရှိသည်ကို လျင်မြန်စွာ ဖြစ်ပွားစေသည်။ ၂။ မကြာမီ ပေးဆပ်ရမည့်ကြွေးမြီကို ပေးဆပ်ရန် ချက်ချင်း အချိန်ကာလ စေ့ရောက်စေသည်။
+<div class="word-item">
+    <p class="word">Acceleration</p>
+    <p class="meaning">မျှော်မှန်းသည်ထက်စော၍ ပိုင်ဆိုင်ခွင့် သို့မဟုတ် အကျိုးခံစားခွင့်တို့ လက်ဝယ် ရောက်ရှိခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accept</p>
+    <p class="meaning">၁။ ဥပဒေကြောင်းအရ စည်းနှောင်မှု ပေါ်ပေါက်လာစေရန် လက်ခံသည်။ ၂။ လိုက်နာလက်ခံသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Acceptance</p>
+    <p class="meaning">လက်ခံခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Acceptance of a bill of exchange</p>
+    <p class="meaning">ငွေလွှဲလက်မှတ်ကိုပေးချေရန်လက်ခံ ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Acceptor</p>
+    <p class="meaning">ငွေပေးချေရန်လက်ခံသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Acceptor for honour</p>
+    <p class="meaning">မူလငွေပေးချေရမည့် လူအစား ငွေပေး ချေရန် တာဝန်ယူသူ (ငွေလွှဲလက်မှတ် ပါငွေကို ပေးချေရန် ငွေလွှဲခံရသူက ငြင်းပယ်ကြောင်းကို မှတ်သားပြီးနောက် ထိုငွေကိုပေးချေရန် လက်ခံသူ)။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accesio (Lat.)</p>
+    <p class="meaning">ထပ်တိုးသည့်အရာ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Access</p>
+    <p class="meaning">၁။ ကိုယ်လက်နှီးနှောခွင့်။ ၂။ ထိတွေ့ခွင့် (မိဘက သားသမီးနှင့်)။ ၃။ သွားလာဝင်ထွက်ခွင့် (အတွင်းကျ သော မြေကွက်မှ လမ်းမသို့)။</p>
+</div>
+<div class="word-item">
+    <p class="word">Access to justice</p>
+    <p class="meaning">တရားမျှတမှုရရှိစေရေး။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accessible place</p>
+    <p class="meaning">ဝင်ရောက်နိုင်သောနေရာ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accession</p>
+    <p class="meaning">၁။ ထီးနန်းဆက်ခံခြင်း။ ၂။ သဘာဝအလျောက် မူလပိုင်နက် နယ်ပယ် တိုးပွားပုံ တိုးပွားနည်း။ ၃။ သဘာဝအလျောက်ဖြစ်စေ၊ အား ထုတ်မှုကြောင့်ဖြစ်စေ ပစ္စည်းပိုင် ဆိုင်ခွင့်ရရှိနိုင်သောနည်းလမ်း။ ၄။ သဘောတူညီချက် သို့မဟုတ် စာချုပ်စာတမ်းတစ်ရပ် ချုပ်ဆို ပြီးနောက်မှ သဘောတူပါဝင်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accessory</p>
+    <p class="meaning">အဓိကတရားခံ မဟုတ်သော်လည်း ပြစ်မှုမကျူးလွန်မီဖြစ်စေ၊ ပြစ်မှုကျူး လွန်ပြီးနောက်ဖြစ်စေ ပြစ်မှုနှင့် တစ် နည်းနည်း ပတ်သက်သောသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accessory after the fact</p>
+    <p class="meaning">ပြစ်မှုတစ်ရပ်ကျူးလွန်သူအား ဖမ်းဆီး ခြင်း၊ တရားစွဲခြင်း၊ ပြစ်မှုထင်ရှား စီရင်ခြင်း သို့မဟုတ် ပြစ်ဒဏ်ချမှတ်ခြင်းမှ ရှောင်ကြဉ်မည်ကို သိလျက်နှင့် အားပေး ကူညီသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accessory before the fact</p>
+    <p class="meaning">ပြစ်မှုတစ်ရပ်ကိုမကျူးလွန်မီ ကြိုတင် ပြင်ဆင်ရာတွင်လည်းကောင်း၊ ကျူး လွန်ရာတွင်လည်းကောင်း ကိုယ်တိုင် ကိုယ်ကျမရှိသော်လည်း အားပေး ကူညီသူ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accident</p>
+    <p class="meaning">မတော်တဆဖြစ်ပွားခြင်း။ မမျှော်လင့် ဘဲဖြစ်ပွားခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accident insurance</p>
+    <p class="meaning">မတော်တဆထိခိုက်မှုအာမခံ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accidental crime</p>
+    <p class="meaning">မတော်တဆဖြစ်ပွားသောပြစ်မှု။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accidental slip</p>
+    <p class="meaning">တရားရုံး၏ မှတ်တမ်းတွင် အမှတ်မဲ့ စာအရေးအသား ကျကျန်ခြင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accommodation</p>
+    <p class="meaning">၁။ (ကူးသန်းရောင်းဝယ်မှုများတွင်)အရေးပေါ်ချေးငွေ။ အရေးပေါ်ထောက်ပံ့ငွေ။ ညှိနှိုင်းသဘောတူညီချက်။ ၂။ နေရာထိုင်ခင်း။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accommodation note or bill</p>
+    <p class="meaning">လုပ်ငန်းအဆင်ပြေစေမှုအတွက်သာ ထုတ်ပေးသော ငွေပေးကတိလက်မှတ် သို့မဟုတ် ငွေလွှဲလက်မှတ်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accompany</p>
+    <p class="meaning">အတူပါရှိသည်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accomplice</p>
+    <p class="meaning">ကြံရာပါ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accord</p>
+    <p class="meaning">၁။ ပေးအပ်သည်။ ၂။ သဘောတူညီချက်။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accord and satisfaction</p>
+    <p class="meaning">တစ်ဖက်က တရားစွဲဆိုခွင့် ရှိနေခြင်း အတွက် ကျေနပ်အောင် ပြုလုပ်ပေးပါမည်ဟူသော သဘောတူညီချက်။</p>
+</div>
+<div class="word-item">
+    <p class="word">According to</p>
+    <p class="meaning">နှင့်အညီ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Accordingly</p>
+    <p class="meaning">လျော်ညီစွာ။</p>
+</div>
+<div class="word-item">
+    <p class="word">Account</p>
+    <p class="meaning">၁။ အကြောင်းအရာ။ ၂။ ငွေစာရင်း။ ၃။ စာရင်း။</p>
+</div>
+</main>
+
+<footer>
+    NLDictionary © 2024 | Powered by Naw Naw & Myanmar Legal Dictionary
+</footer>
+
+<div class="acknowledgement">
+    <p>Based on "The English-Myanmar Law Dictionary, Fifth Edition, 2021 - Union Attorney General's Office of the Republic of the Union of Myanmar."</p>
+    <p>This tool is for educational purposes only and is not intended for commercial use.</p>
+</div>
+
+<div class="note">
+    <p>This dictionary tool is created by students for students to help with assignments and readings. Feel free to share feedback and contribute!</p>
+</div>
+
+<script>
+    function searchWord() {
+        let input = document.getElementById('search').value.toLowerCase();
+        let wordItems = document.getElementsByClassName('word-item');
+
+        for (let i = 0; i < wordItems.length; i++) {
+            let word = wordItems[i].getElementsByClassName('word')[0].innerText.toLowerCase();
+            if (word.includes(input)) {
+                wordItems[i].style.display = "";
+            } else {
+                wordItems[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
