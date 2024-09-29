@@ -1684,21 +1684,33 @@
         word.style.display = 'none';
       }
     });
-    
-    // Temporarily comment out the search functionality to test
-    /*
+
+    // Search functionality
     const searchInput = document.getElementById("search");
     searchInput.addEventListener("input", function() {
       const filter = searchInput.value.toLowerCase();
+      let found = false; // To track if any words match the search
+
       wordList.forEach((word) => {
         if (word.textContent.toLowerCase().includes(filter)) {
-          word.style.display = '';
+          word.style.display = ''; // Show the word if it matches the filter
+          found = true;
         } else {
-          word.style.display = 'none';
+          word.style.display = 'none'; // Hide the word if it doesn't match
         }
       });
+
+      // If the search bar is empty, reset to showing the first 10 words
+      if (filter === "") {
+        wordList.forEach((word, index) => {
+          if (index < 10) {
+            word.style.display = ''; // Show the first 10 words
+          } else {
+            word.style.display = 'none'; // Hide the others
+          }
+        });
+      }
     });
-    */
   });
 </script>
 
