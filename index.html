@@ -1678,14 +1678,12 @@
   document.addEventListener("DOMContentLoaded", function() {
     const wordList = document.querySelectorAll("#wordList .word-item");
 
-    // Uncomment this part if you want to limit the number of words displayed by default
-    /*
+    // Show only the first 10 words by default
     wordList.forEach((word, index) => {
       if (index >= 10) {
         word.style.display = 'none';
       }
     });
-    */
 
     // Search functionality
     const searchInput = document.getElementById("search");
@@ -1693,14 +1691,13 @@
       const filter = searchInput.value.toLowerCase();
       wordList.forEach((word) => {
         if (word.textContent.toLowerCase().includes(filter)) {
-          word.style.display = '';  // Show the word if it matches the filter
+          word.style.display = '';
         } else {
-          word.style.display = 'none';  // Hide the word if it doesn't match
+          word.style.display = 'none';
         }
       });
     });
   });
 </script>
-
 </body>
 </html>
