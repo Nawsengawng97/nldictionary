@@ -59,19 +59,6 @@
             color: white;
             margin-top: 30px;
         }
-        .acknowledgement {
-            font-size: 12px;
-            color: #777;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .note {
-            font-size: 14px;
-            color: #555;
-            text-align: center;
-            margin-top: 15px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -82,7 +69,7 @@
 
 <main>
     <input type="text" id="search" placeholder="Search for a word...">
-<div id="wordList">
+    <div id="wordList">
     <div class="word-item">
     <p class="word">A</p>
     <p class="meaning">၁။ (အမှတ်စဉ်)က။ <br> ၂။ တရားရုံးတွင် တရားလိုဘက်မှ တင်သွင်းသည့် ဦးဆုံးသက်သေခံ စာချုပ်စာတမ်းများအတွက် ပေး သည့် အမှတ်စဉ် (တရားရုံးတွင် တရားလိုဘက်မှတင်သွင်းသော စာချုပ်စာတမ်းများကို အမှတ်စဉ် ဖြင့်လည်းကောင်း၊ အခြားတစ်ဖက် မှတင်သွင်းသော စာချုပ်စာတမ်း များကို “၁” ၊ “၂” ၊ “၃” အမှတ် စဉ်ဖြင့်လည်းကောင်း၊ ခွဲခြားသတ်မှတ်သည်)</p>
@@ -1673,46 +1660,51 @@
 <div class="word-item">
     <p class="word">Annunciation</p>
     <p class="meaning">အများသိစေရန်တရားဝင်ကြေညာခြင်း။</p>
-</div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const wordList = document.querySelectorAll("#wordList .word-item");
+    </div> <!-- End of #wordList -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const wordList = document.querySelectorAll("#wordList .word-item");
 
-    // Show only the first 10 words by default
-    wordList.forEach((word, index) => {
-      if (index >= 10) {
-        word.style.display = 'none';
-      }
-    });
-
-    // Search functionality
-    const searchInput = document.getElementById("search");
-    searchInput.addEventListener("input", function() {
-      const filter = searchInput.value.toLowerCase();
-      let found = false; // To track if any words match the search
-
-      wordList.forEach((word) => {
-        if (word.textContent.toLowerCase().includes(filter)) {
-          word.style.display = ''; // Show the word if it matches the filter
-          found = true;
-        } else {
-          word.style.display = 'none'; // Hide the word if it doesn't match
-        }
-      });
-
-      // If the search bar is empty, reset to showing the first 10 words
-      if (filter === "") {
+        // Show only the first 10 words by default
         wordList.forEach((word, index) => {
-          if (index < 10) {
-            word.style.display = ''; // Show the first 10 words
-          } else {
-            word.style.display = 'none'; // Hide the others
+          if (index >= 10) {
+            word.style.display = 'none';
           }
         });
-      }
-    });
-  });
-</script>
+
+        // Search functionality
+        const searchInput = document.getElementById("search");
+        searchInput.addEventListener("input", function() {
+          const filter = searchInput.value.toLowerCase();
+          let found = false; // To track if any words match the search
+
+          wordList.forEach((word) => {
+            if (word.textContent.toLowerCase().includes(filter)) {
+              word.style.display = ''; // Show the word if it matches the filter
+              found = true;
+            } else {
+              word.style.display = 'none'; // Hide the word if it doesn't match
+            }
+          });
+
+          // If the search bar is empty, reset to showing the first 10 words
+          if (filter === "") {
+            wordList.forEach((word, index) => {
+              if (index < 10) {
+                word.style.display = ''; // Show the first 10 words
+              } else {
+                word.style.display = 'none'; // Hide the others
+              }
+            });
+          }
+        });
+      });
+    </script>
+</main>
+
+<footer>
+    NLDictionary © 2024 | Powered by Naw Naw & Myanmar Legal Dictionary
+</footer>
 
 </body>
 </html>
