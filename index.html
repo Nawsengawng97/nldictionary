@@ -1693,12 +1693,12 @@
   document.addEventListener("DOMContentLoaded", function() {
     const wordList = document.querySelectorAll("#wordList .word-item");
 
-    // Show only the first 10 words by default
-    wordList.forEach((word, index) => {
-      if (index >= 10) {
-        word.style.display = 'none';
-      }
-    });
+    // Comment this part out for testing
+// wordList.forEach((word, index) => {
+//     if (index >= 10) {
+//         word.style.display = 'none';
+//     }
+// });
 
     // Search functionality
     const searchInput = document.getElementById("search");
