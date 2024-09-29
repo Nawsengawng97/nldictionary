@@ -81,7 +81,7 @@
 </header>
 
 <main>
-    <input type="text" id="search" onkeyup="searchWord()" placeholder="Search for a word...">
+    <input type="text" id="search" onkeyup= placeholder="Search for a word...">
 
     <div class="word-item">
     <p class="word">A</p>
@@ -481,19 +481,29 @@
 </div>
 
 <script>
-    function searchWord() {
-        let input = document.getElementById('search').value.toLowerCase();
-        let wordItems = document.getElementsByClassName('word-item');
+  document.addEventListener("DOMContentLoaded", function() {
+    const wordList = document.querySelectorAll("#wordList .word-item");
 
-        for (let i = 0; i < wordItems.length; i++) {
-            let word = wordItems[i].getElementsByClassName('word')[0].innerText.toLowerCase();
-            if (word.includes(input)) {
-                wordItems[i].style.display = "";
-            } else {
-                wordItems[i].style.display = "none";
-            }
+    // Show only the first 10 words by default
+    wordList.forEach((word, index) => {
+      if (index >= 10) {
+        word.style.display = 'none';
+      }
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById("search");
+    searchInput.addEventListener("input", function() {
+      const filter = searchInput.value.toLowerCase();
+      wordList.forEach((word) => {
+        if (word.textContent.toLowerCase().includes(filter)) {
+          word.style.display = '';
+        } else {
+          word.style.display = 'none';
         }
-    }
+      });
+    });
+  });
 </script>
 
 </body>
